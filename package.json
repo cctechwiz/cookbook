@@ -10,7 +10,9 @@
     "packages/*"
   ],
   "scripts": {
-    "api": "yarn workspace @cookbook/api start"
+    "api": "yarn workspace @cookbook/api",
+    "shared": "yarn workspace @cookbook/shared",
+    "ui": "yarn workspace @cookbook/ui"
   },
   "devDependencies": {
     "typescript": "^4.5.2"
