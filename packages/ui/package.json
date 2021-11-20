@@ -4,8 +4,11 @@
   "description": "Cookbook frontend UI",
   "main": "dist/app.js",
   "license": "MIT",
+  "private": true,
   "dependencies": {
-    "@cookbook/shared": "^0.0.1",
+    "@cookbook/shared": "^0.0.1"
+  },
+  "devDependencies": {
     "typescript": "^4.5.2"
   },
   "scripts": {
