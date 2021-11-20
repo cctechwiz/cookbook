@@ -5,6 +5,7 @@
   "main": "dist/server.js",
   "license": "MIT",
   "dependencies": {
+    "@cookbook/shared": "^0.0.1",
     "@types/express": "^4.17.13",
     "@types/node": "^16.11.9",
     "express": "^4.17.1",

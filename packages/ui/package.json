@@ -5,6 +5,7 @@
   "main": "dist/app.js",
   "license": "MIT",
   "dependencies": {
+    "@cookbook/shared": "^0.0.1",
     "typescript": "^4.5.2"
   },
   "scripts": {
