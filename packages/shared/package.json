@@ -1,0 +1,16 @@
+{
+  "name": "@cookbook/shared",
+  "version": "0.0.1",
+  "description": "Cookbook shared resources",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^16.11.9",
+    "typescript": "^4.5.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prestart": "yarn build",
+    "start": "node ."
+  }
+}
