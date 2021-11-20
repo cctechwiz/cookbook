@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    /* Useful base references -> https://github.com/tsconfig/bases */
 
     /* Projects */
     "incremental": true,                              /* Enable incremental compilation */
