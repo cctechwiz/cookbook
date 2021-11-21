@@ -4,5 +4,12 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist"
-  }
+  },
+  "references": [
+    { "path": "../shared" }
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
