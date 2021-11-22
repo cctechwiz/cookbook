@@ -10,7 +10,7 @@ const recipe: Recipe = {
   title: "one",
   ingredients: [],
   directions: [],
-  categories: []
+  categories: [],
 };
 console.log(recipe);
 

@@ -16,7 +16,10 @@
   },
   "scripts": {
     "build": "tsc --build",
+    "clean": "rm -rf ./dist && rm ./tsconfig.tsbuildinfo",
+    "build:clean": "yarn clean && yarn build",
     "prestart": "yarn build",
-    "start": "node ."
+    "start": "node .",
+    "start:watch": "tsc-watch --build --noClear --onSuccess 'node .'"
   }
 }
