@@ -1,27 +1,29 @@
 FROM node:lts-alpine
 
-WORKDIR /opt/cookbook-api
+ARG PKG=notset
 
-# Install packages required by Shared and API workspaces
+WORKDIR /opt/cookbook-$PKG
+
+# Install packages required by Shared and PKG workspaces
 COPY package.json ./
 COPY yarn.lock ./
 COPY packages/shared/package.json ./packages/shared/
-COPY packages/api/package.json ./packages/api/
+COPY packages/$PKG/package.json ./packages/$PKG/
 RUN yarn install
 
-# Copy Base, Shared, and API tsconfigs
+# Copy Base, Shared, and PKG tsconfigs
 COPY tsconfig.json ./
 COPY packages/shared/tsconfig.json ./packages/shared/
-COPY packages/api/tsconfig.json ./packages/api/
+COPY packages/$PKG/tsconfig.json ./packages/$PKG/
 
 # Build Shared workspace
 COPY packages/shared/src/ ./packages/shared/src/
 RUN yarn @shared build
 
-# Build API workspace
-COPY packages/api/src/ ./packages/api/src/
-RUN yarn @api build
+# Build PKG workspace
+COPY packages/$PKG/src/ ./packages/$PKG/src/
+RUN yarn @$PKG build
 
-# Run the API server on startup
+# Run the PKG server on startup
 EXPOSE 8080
-CMD ["node", "packages/api/dist/server.js"]
+CMD yarn @$PKG start

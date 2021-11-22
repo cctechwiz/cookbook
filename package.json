@@ -14,7 +14,18 @@
     "@all": "yarn workspaces run",
     "@api": "yarn workspace @cookbook/api",
     "@shared": "yarn workspace @cookbook/shared",
-    "@ui": "yarn workspace @cookbook/ui"
+    "@ui": "yarn workspace @cookbook/ui",
+
+    "docker:build": "yarn docker:build:api && yarn docker:build:ui",
+    "docker:run": "yarn docker:run:api && yarn docker:run:ui",
+    "docker:clean": "yarn docker:clean:api && yarn docker:clean:ui",
+
+    "docker:build:api": "docker build -t cookbook-api . --build-arg PKG=api",
+    "docker:build:ui": "docker build -t cookbook-ui . --build-arg PKG=ui",
+    "docker:run:api": "docker run --rm -d -p 8080:8080 --name cookbook-api cookbook-api:latest",
+    "docker:run:ui": "docker run --rm -d -p 8080:8080 --name cookbook-ui cookbook-ui:latest",
+    "docker:clean:api": "docker rmi -f cookbook-api",
+    "docker:clean:ui": "docker rmi -f cookbook-ui"
   },
   "devDependencies": {
     "tsc-watch": "^4.5.0",
