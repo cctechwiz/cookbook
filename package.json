@@ -11,9 +11,10 @@
     "packages/*"
   ],
   "scripts": {
-    "api": "yarn workspace @cookbook/api",
-    "shared": "yarn workspace @cookbook/shared",
-    "ui": "yarn workspace @cookbook/ui"
+    "@all": "yarn workspaces run",
+    "@api": "yarn workspace @cookbook/api",
+    "@shared": "yarn workspace @cookbook/shared",
+    "@ui": "yarn workspace @cookbook/ui"
   },
   "devDependencies": {
     "tsc-watch": "^4.5.0",

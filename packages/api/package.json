@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@cookbook/shared": "^0.0.1",
+    "@cookbook/shared": "*",
     "express": "^4.17.1"
   },
   "devDependencies": {
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "clean": "rm -rf ./dist && rm ./tsconfig.tsbuildinfo",
+    "clean": "rm -rf ./dist",
     "build:clean": "yarn clean && yarn build",
     "prestart": "yarn build",
     "start": "node .",

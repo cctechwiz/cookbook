@@ -6,14 +6,14 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@cookbook/shared": "^0.0.1"
+    "@cookbook/shared": "*"
   },
   "devDependencies": {
     "typescript": "^4.5.2"
   },
   "scripts": {
     "build": "tsc --build",
-    "clean": "rm -rf ./dist && rm ./tsconfig.tsbuildinfo",
+    "clean": "rm -rf ./dist",
     "build:clean": "yarn clean && yarn build",
     "prestart": "yarn build",
     "start": "node .",
